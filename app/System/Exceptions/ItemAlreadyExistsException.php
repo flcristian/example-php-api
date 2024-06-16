@@ -2,4 +2,6 @@
 
 namespace App\System\Exceptions;
 
-class ItemAlreadyExistsException extends \Exception { }
+use Exception;
+
+class ItemAlreadyExistsException extends Exception { }

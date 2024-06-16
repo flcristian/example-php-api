@@ -2,4 +2,6 @@
 
 namespace App\System\Exceptions;
 
-class ItemDoesNotExistException extends \Exception { }
+use Exception;
+
+class ItemDoesNotExistException extends Exception { }

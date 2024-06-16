@@ -14,6 +14,4 @@ class CreateProductDTO
         $this->price = $price;
         $this->category = $category;
     }
-
-
 }

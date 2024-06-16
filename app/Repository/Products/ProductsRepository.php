@@ -3,9 +3,9 @@
 namespace App\Repository\Products;
 
 use App\Models\Products\CreateProductDTO;
+use App\Models\Products\Product;
 use App\Models\Products\UpdateProductDTO;
 use App\Repository\Products\Interfaces\ProductsRepositoryInterface;
-use App\Models\Products\Product;
 
 class ProductsRepository implements ProductsRepositoryInterface
 {
