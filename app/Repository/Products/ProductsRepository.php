@@ -9,27 +9,19 @@ use App\Repository\Products\Interfaces\ProductsRepositoryInterface;
 
 class ProductsRepository implements ProductsRepositoryInterface
 {
-    protected $product;
-
-    public function __construct(Product $product)
-    {
-        $this->product = $product;
-    }
-
-
     public function getAllProducts(): array
     {
-        return $this->product->all()->toArray();
+        return Product::all()->toArray();
     }
 
     public function getProductById(int $id): ?Product
     {
-        return $this->product->find($id);
+        return Product::find($id);
     }
 
     public function createProduct(CreateProductDTO $dto): Product
     {
-        return $this->product->create([
+        return Product::create([
             'name' => $dto->name,
             'price' => $dto->price,
             'category' => $dto->category
@@ -38,7 +30,7 @@ class ProductsRepository implements ProductsRepositoryInterface
 
     public function updateProduct(UpdateProductDTO $dto): Product
     {
-        $product = $this->product->find($dto->id);
+        $product = Product::find($dto->id);
 
         $product->fill([
             'name' => $dto->name,
@@ -53,7 +45,7 @@ class ProductsRepository implements ProductsRepositoryInterface
 
     public function deleteProduct(int $id): Product
     {
-        $product = $this->product->find($id);
+        $product = Product::find($id);
 
         $product->delete();
 
